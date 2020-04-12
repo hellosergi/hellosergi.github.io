@@ -1,3 +1,103 @@
+
+html {
+  height: 100%;
+}
 body {
-  font-family: Helvetica;
+  min-height: 100%;
+  display: grid;
+  background-color: #EDEDED;
+}
+
+.display {
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 95%;
+    color: #000000;
+}
+
+.caption {
+    font-family: Times New Roman;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.links {
+    margin: auto;
+    text-align: center;
+    display: block;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.title {
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+#dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  background: red;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.container {
+  align-self: center;
+  justify-self: center;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+header {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+footer {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+}
+
+.status {
+  /* margin-bottom: 10px; */
+  /* text-transform: none; */
+  /* text-align: right; */
+}
+
+.version {
+  right: 0px;
+  /* bottom: 50px; */
+  text-align: right;
+}
+
+a:hover {
+  font-style: normal;
+}
+
+.online:hover + #dot {
+  /* font-style: normal; */
+  background: green;
+  width: 100px;
+  color: blue;
 }
