@@ -1,58 +1,85 @@
 
 html {
-  height: 100%;
+  height: 99%;
 }
+
 body {
   min-height: 100%;
-  display: grid;
   background-color: #EDEDED;
+  display: grid;
+  grid-template-rows: 25% 1fr 25%;
+  grid-template-columns: 1fr;
+  grid-gap: 2vw;
+  grid-template-areas:
+  "header"
+  "contacts"
+  "footer";
 }
 
+/* header, footer, div {
+  background: gold;
+  } */
+
+/* Text Styles */
 .display {
-    font-family: Helvetica Neue;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 80px;
-    line-height: 95%;
-    color: #000000;
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8vh;
+  line-height: 90%;
+  color: #000000;
+  text-align: center;
+  margin: 0;
 }
-
 .caption {
-    font-family: Times New Roman;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 100%;
-    letter-spacing: -0.01em;
-    color: #000000;
-    text-transform: uppercase;
+  font-family: Helvetica Neue;
+  font-weight: normal;
+  font-size: 3vh;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  color: #000000;
+  text-transform: uppercase;
+  text-align: center;
 }
-
 .links {
-    margin: auto;
-    text-align: center;
-    display: block;
-    padding: 5px;
-    margin-bottom: 5px;
+  text-align: center;
+  display: block;
+  padding: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%
 }
 
-.title {
-  margin: auto;
-  margin-bottom: 5px;
+/* Blocks */
+header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+#contacts {
+  grid-area: contacts;
+  padding: 10px;
+}
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  place-content: first baseline center;
+  padding: 10px;
 }
 
 #dot {
-  width: 30px;
-  height: 30px;
-  border-radius: 25px;
+  border-radius: 50%;
+  width: 4vh;
+  height: 4vh;
   background: red;
   margin: auto;
-  margin-top: 10px;
-}
-
-.container {
-  align-self: center;
-  justify-self: center;
+  margin-top: 0;
+  margin-bottom: 5px;
+  /* margin-top: 10px; */
 }
 
 a {
@@ -60,44 +87,17 @@ a {
   text-decoration: none;
 }
 
-header {
-    position: absolute;
-    left: 30px;
-    right: 30px;
-    top: 30px;
+.bookmate {
 }
 
-h1 {
-  margin-bottom: 20px;
-  margin-top: 0px;
+img {
+  display: block;
+  height: 5vh;
+  padding: 2vh;
+  margin: auto;
 }
 
-footer {
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  bottom: 30px;
-}
-
-.status {
-  /* margin-bottom: 10px; */
-  /* text-transform: none; */
-  /* text-align: right; */
-}
-
-.version {
-  right: 0px;
-  /* bottom: 50px; */
-  text-align: right;
-}
-
+/* Animations */
 a:hover {
-  font-style: normal;
-}
-
-.online:hover + #dot {
-  /* font-style: normal; */
-  background: green;
-  width: 100px;
-  color: blue;
+  font-style: italic;
 }
