@@ -1,85 +1,79 @@
 
 html {
-  height: 99%;
+  height: 100%;
+  width: 100%
 }
 
 body {
   min-height: 100%;
   background-color: #FFF;
+  font-size: 5vh;
+
   display: grid;
-  grid-template-rows: 25% 1fr 25%;
-  grid-template-columns: 1fr;
-  grid-gap: 2vw;
+  grid-template-rows: 1.5em 2em 4em 3em 1fr 3.5em;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
   grid-template-areas:
-  "header"
-  "contacts"
-  "footer";
+  "name surname"
+  "title current-job"
+  "previous previous-job"
+  "say-hello contacts"
+  "empty empty"
+  "status time";
 }
 
-/* header, footer, div {
-  background: gold;
-  } */
+header, footer, div {
+  /* background: gold; */
+  }
 
 /* Text Styles */
-.display {
+.prim {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: normal;
-  font-size: 8vh;
-  line-height: 90%;
-  color: #000000;
-  text-align: center;
-  margin: 0;
-}
-.caption {
-  font-family: Helvetica Neue;
-  font-weight: normal;
-  font-size: 3vh;
-  line-height: 120%;
-  letter-spacing: -0.01em;
+  font-size: 5vh;
+  line-height: 100%;
   color: #000000;
   text-transform: uppercase;
-  text-align: center;
+  margin: 0;
 }
-.links {
-  text-align: center;
-  display: block;
-  padding: 5px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%
+.right {
+  text-align: right;
+}
+.sec {
+  font-family: Times New Roman;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 5.1vh;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-align: left;
 }
 
 /* Blocks */
-header {
-  grid-area: header;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-#contacts {
-  grid-area: contacts;
-  padding: 10px;
-}
-footer {
-  grid-area: footer;
-  display: flex;
-  flex-direction: column;
-  place-content: first baseline center;
-  padding: 10px;
+#empty {
+  grid-area: empty;
 }
 
+
+/* Styling */
 #dot {
   border-radius: 50%;
-  width: 4vh;
-  height: 4vh;
+  width: 40vh;
+  height: 40vh;
   background: red;
   margin: auto;
   margin-top: 0;
   margin-bottom: 5px;
-  /* margin-top: 10px; */
+  margin-top: 10px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -1%;
+  /* bottom: -25%; */
+  transform: translate(-50%, 0%);
+  z-index: -1;
 }
 
 a {
@@ -87,17 +81,7 @@ a {
   text-decoration: none;
 }
 
-.bookmate {
-}
-
-img {
-  display: block;
-  height: 5vh;
-  padding: 2vh;
-  margin: auto;
-}
-
 /* Animations */
 a:hover {
-  font-style: italic;
+  text-decoration: underline;
 }
