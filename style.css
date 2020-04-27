@@ -60,8 +60,8 @@ header, footer, div {
 /* Styling */
 #dot {
   border-radius: 50%;
-  width: 40vh;
-  height: 40vh;
+  width: 30vh;
+  height: 30vh;
   background: red;
   margin: auto;
   margin-top: 0;
@@ -70,9 +70,8 @@ header, footer, div {
   display: block;
   position: absolute;
   left: 50%;
-  bottom: -1%;
-  /* bottom: -25%; */
-  transform: translate(-50%, 0%);
+  bottom: 0%;
+  transform: translate(-50%, 50%);
   z-index: -1;
 }
 
