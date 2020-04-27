@@ -8,11 +8,12 @@ body {
   min-height: 100%;
   background-color: #FFF;
   font-size: 5vh;
+  padding: 0.2em;
 
   display: grid;
-  grid-template-rows: 1.5em 2em 4em 3em 1fr 3.5em;
+  grid-template-rows: 1.5em 2.5em 3.5em 3em 1fr 3.5em;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5em;
+  grid-gap: 0.2em;
   grid-template-areas:
   "name surname"
   "title current-job"
@@ -31,7 +32,7 @@ header, footer, div {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: normal;
-  font-size: 5vh;
+  font-size: 4.5vh;
   line-height: 100%;
   color: #000000;
   text-transform: uppercase;
@@ -44,7 +45,7 @@ header, footer, div {
   font-family: Times New Roman;
   font-style: italic;
   font-weight: normal;
-  font-size: 5.1vh;
+  font-size: 4.6vh;
   line-height: 100%;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -60,14 +61,9 @@ header, footer, div {
 /* Styling */
 #dot {
   border-radius: 50%;
-  width: 30vh;
-  height: 30vh;
+  width: 50vh;
+  height: 50vh;
   background: red;
-  margin: auto;
-  margin-top: 0;
-  margin-bottom: 5px;
-  margin-top: 10px;
-  display: block;
   position: absolute;
   left: 50%;
   bottom: 0%;
