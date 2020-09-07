@@ -1,79 +1,116 @@
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
 
 html {
-  height: 100%;
-  width: 100%;
+  /* height: 100%;
+  width: 100%; */
   overflow: hidden;
 }
 
 body {
-  min-height: 100%;
   background-color: #FFF;
-  font-size: 5vh;
-  padding: 0.2em;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  display: grid;
-  grid-template-rows: 1.5em 2.5em 3.5em 3em 1fr 3.5em;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.2em;
-  grid-template-areas:
-  "name surname"
-  "title current-job"
-  "previous previous-job"
-  "say-hello contacts"
-  "empty empty"
-  "status time";
-}
-
-header, footer, div {
-  /* background: gold; */
-  }
-
-/* Text Styles */
-.prim {
   font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 4.5vh;
-  line-height: 100%;
-  color: #000000;
+  font-size: 3vh;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  margin: 0;
+  text-align: center;
+  color: #52795A;
 }
-.right {
-  text-align: right;
+
+#grid {
+  border: 3px solid #52795A;
+  border-radius: 5vh;
+  display: grid;
+  grid-template-areas:
+  "name name . asterisk asterisk asterisk"
+  "name name . asterisk asterisk asterisk"
+  "name name . asterisk asterisk asterisk"
+  "name name . . . ."
+  "name name . . . ."
+  "surname surname empty instagram telegram cv";
+  grid-template-rows: 8vh 8vh 8vh 8vh 8vh 8vh;
+  grid-template-columns: 8vh 8vh 8vh 8vh 8vh 8vh;
+  grid-gap: 2px;
+  overflow: hidden;
 }
-.sec {
-  font-family: Times New Roman;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 4.6vh;
-  line-height: 100%;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
+
+#grid > * {
+  /* background-color: gold; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  grid-area: name;
+  font-size: 13vh;
+  letter-spacing: -0.02em;
   text-align: left;
 }
 
-/* Blocks */
-#empty {
-  grid-area: empty;
+.name-text {
+  transform: rotate(-90deg);
 }
 
+.surname {
+  grid-area: surname;
+}
 
-/* Styling */
-#dot {
-  border-radius: 50%;
-  width: 50vh;
-  height: 50vh;
-  background: red;
+.curve {
   position: absolute;
-  left: 50%;
-  bottom: -25vh;
-  transform: translate(-50%, 0%);
-  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.asterisk {
+  grid-area: asterisk;
+  font-family: Georgia;
+  font-weight: normal;
+  font-size: 45vh;
+  line-height: 50%;
+  bottom: 0;
+  /* identical to box height, or 280px */
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #52795A;
+}
+
+.asterisk-symbol {
+  position: relative;
+  top: 8vh;
+}
+
+.instagram {
+  grid-area: instagram;
+}
+
+.telegram {
+  grid-area: telegram;
+}
+
+.cv {
+  grid-area: cv;
+}
+
+.descr {
+  font-family: Helvetica Neue;
+  font-size: 3vh;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: #52795A;
 }
 
 a {
-  color: #000000;
+  color: #52795A;
   text-decoration: none;
 }
 
@@ -81,3 +118,40 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+
+#curved {
+  position: fixed;
+  align-content: center;
+  top: 15%;
+  right: 50%;
+	font-family: Helvetica Neue;
+	font-size: 3vh;
+	text-transform: uppercase;
+	/* min-width: 50vh;
+	min-height: 50vh; */
+	color: #52795A;
+;
+}
+
+.char {
+  --i: calc(100% / (var(--char-total) + 2));
+	position: absolute;
+  /* min-height: 20vh;
+  max-height: 20vh; */
+  /* top: -29vh;
+  right: 26vh; */
+	offset-path: path('M225.5.5c124.3 0 225 100.7 225 225s-100.7 225-225 225S.5 349.8.5 225.5 101.2.5 225.5.5');
+	offset-distance: calc(var(--i) * var(--char-index));
+	/* padding-top: 20vw; */
+}
+
+/* @keyframes loop {
+	50% {
+		offset-distance: calc((var(--char-index) * 2.5rem) + 700px);
+		color: hotpink;
+	}
+	100% {
+		offset-distance: calc((var(--char-index) * 1.5rem) + 1690px);
+	}
+} */
