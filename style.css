@@ -2,8 +2,6 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 
 html {
-  /* height: 100%;
-  width: 100%; */
   overflow: hidden;
 }
 
@@ -24,7 +22,7 @@ body {
 
 #grid {
   border: 3px solid #52795A;
-  border-radius: 5vh;
+  border-radius: 4vh;
   display: grid;
   grid-template-areas:
   "name name . asterisk asterisk asterisk"
@@ -35,7 +33,7 @@ body {
   "surname surname empty instagram telegram cv";
   grid-template-rows: 8vh 8vh 8vh 8vh 8vh 8vh;
   grid-template-columns: 8vh 8vh 8vh 8vh 8vh 8vh;
-  grid-gap: 2px;
+  grid-gap: 1px;
   overflow: hidden;
 }
 
@@ -73,20 +71,18 @@ body {
   grid-area: asterisk;
   font-family: Georgia;
   font-weight: normal;
-  font-size: 45vh;
+  font-size: 50vh;
   line-height: 50%;
   bottom: 0;
-  /* identical to box height, or 280px */
-  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: #52795A;
-
+  z-index: -1;
   /* overflow: hidden; */
 }
 
 .asterisk-symbol {
   position: relative;
-  top: 8vh;
+  top: 9.5vh;
 }
 
 .instagram {
@@ -101,22 +97,11 @@ body {
   grid-area: cv;
 }
 
-.descr {
-  font-family: Helvetica Neue;
-  font-size: 3vh;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 100%;
-  color: #52795A;
-}
-
 a {
   color: #52795A;
   text-decoration: none;
 }
 
-/* Animations */
 a:hover {
   text-decoration: underline;
 }
@@ -128,33 +113,34 @@ a:hover {
 
 #curved {
   position: absolute;
+  /* width: 100px;
+  height: 100px; */
+  /* position: fixed; */
+  /* top: 30vh;
+  left: 30vh; */
   font-family: Helvetica Neue;
   font-size: 3vh;
 	text-transform: uppercase;
 	color: #52795A;
   animation-name: spin;
-  animation-duration: 10000ms;
+  animation-duration: 15000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 .char {
-  --units: 1;  
+  --units: 1;
   --l: calc(var(--char-total));
   --rotationUnit: calc((1turn / var(--l)) * var(--char-index, 1));
   transform: rotate(var(--rotationUnit));
   transform-origin: center;
   display: block !important;
   position: absolute !important;
-  width: 50vh;
-  height: 50vh;
-  top: -25vh;
-  left: -25vh;
+  width: 60vh;
+  height: 60vh;
+  top: -30vh;
+  left: -30vh;
   text-align: center;
-  /* animation: loop 3500ms cubic-bezier(.62,.01,.42,1.01) infinite alternate calc(var(--char-index) * 10ms); */
-}
-.char::before, .char::after {
-  display: none;
 }
 
 @keyframes spin {
